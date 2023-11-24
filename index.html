@@ -1,21 +1,241 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-      
+    <div class="container py-5">
+      <div class="card w-75 mx-auto">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <input
+              type="number"
+              class="form-control form__input"
+              id="inputNum"
+              placeholder="Nhập số n"
+            />
+          </div>
+          <div class="col-12 col-lg-6">
+            <button
+              class="btn btn-primary me-1 mb-1"
+              type="button"
+              onclick="getNumber()"
+            >
+              Thêm số
+            </button>
+          </div>
+        </div>
+        <div class="alert alert-success" role="alert">
+          👉<span id="txtArray"></span>
+        </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 1: Tổng các số dương</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="sumPositive()"
+              >
+                Tính tổng
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtSumPositive"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 2: Đếm các số dương</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="countPositive()"
+              >
+                Đếm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtCountPositive"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 3: Tìm số nhỏ nhất</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="minNumber()"
+              >
+                Tìm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtMinNumber"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 4: Tìm số dương nhỏ nhất</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="minPositive()"
+              >
+                Tìm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtMinPositive"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 5: Tìm số chẵn cuối cùng</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="lastEven()"
+              >
+                Tìm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtLastEven"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 6: Đổi chỗ</p>
+              <input type="number" placeholder="Nhập số vị trí 1" class="form-control form__input" id="positionNumber1">
+              <input type="number" placeholder="Nhập số vị trí 2" class="form-control form__input" id="positionNumber2">
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="swapNumber()"
+              >
+                Đổi chỗ
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtSwapNumber"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 7: Sắp xếp tăng dần</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="sortNumber()"
+              >
+                Sắp xếp
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtSortNumber"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 8: Tìm số nguyên tố đầu tiên</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="firstPrime()"
+              >
+                Tìm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtFirstPrime"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 9: Đếm số nguyên</p>
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <input
+                    type="number"
+                    class="form-control form__input"
+                    id="inputNum1"
+                    placeholder="Nhập số n"
+                  />
+                </div>
+                <div class="col-12 col-lg-6">
+                  <button
+                    class="btn btn-primary me-1 mb-1"
+                    type="button"
+                    onclick="getNumber1()"
+                  >
+                    Thêm số
+                  </button>
+                </div>
+              </div>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtArray1"></span>
+              </div>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="countInteger()"
+              >
+                Đếm
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtCountInteger"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p>Bài 10: So sánh số lượng số âm và số dương</p>
+              <button
+                class="btn btn-primary me-1 mb-1"
+                type="button"
+                onclick="compareNumber()"
+              >
+                So sánh
+              </button>
+              <div class="alert alert-success" role="alert">
+                👉<span id="txtCompareNumber"></span>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="./main.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
 </html>
